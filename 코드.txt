@@ -1,0 +1,118 @@
+레이팅
+import csv
+f=open('수행.csv')
+data=csv.reader(f)
+
+a=[]
+b=[]
+c=[]
+d=[]
+e=[]
+g=[]
+h=[]
+
+for row in data:
+    team=row[1]
+    rating=row[-3]
+    yc=row[-2]
+    rc=row[-1]
+    
+    if 'Manchester United'in team:
+        a.append(rating)
+        a_1=sum (map(float, a))/len(a)
+    if 'Manchester City'in team:
+        b.append(rating)
+        b_1=sum (map(float, b))/len(b)
+    if 'Liverpool'in team:
+        c.append(rating)
+        c_1=sum (map(float, c))/len(c)
+    if 'Arsenal'in team:
+        d.append(rating)
+        d_1=sum (map(float, d))/len(d)
+    if 'Chelsea'in team:
+        e.append(rating)
+        e_1=sum (map(float, e))/len(e)
+    if 'Tottenham'in team:
+        g.append(rating)
+        g_1=sum (map(float, g))/len(g)
+    if 'Swansea'in team:
+        h.append(rating)
+        h_1=sum (map(float, h))/len(h)
+    
+club=['Manchester United' ,' Manchester City' ,'Liverpool','Arsenal','Chelsea','Tottenham' ,'Swansea']
+avg=[a_1,b_1,c_1,d_1,e_1,g_1,h_1]
+import matplotlib.pyplot as plt
+import matplotlib
+plt.ylim(6.5,7.2)
+matplotlib.rcParams.update({'font.size': 4})
+
+
+plt.bar(club, avg)
+plt.title('Rating of Big Clubs')
+plt.xlabel('Team')
+plt.ylabel('Average of Rating')
+plt.show()
+f.close()
+
+
+
+
+
+
+
+옐로우 카드
+import csv
+f=open('수행.csv')
+data=csv.reader(f)
+
+a=[]
+b=[]
+c=[]
+d=[]
+e=[]
+g=[]
+h=[]
+
+for row in data:
+    team=row[1]
+    rating=row[-3]
+    yc=row[-2]
+    rc=row[-1]
+    
+    if 'Manchester United'in team:
+        a.append(yc)
+        a_1=sum (map(float, a))
+    if 'Manchester City'in team:
+        b.append(yc)
+        b_1=sum (map(float, b))
+    if 'Liverpool'in team:
+        c.append(yc)
+        c_1=sum (map(float, c))
+    if 'Arsenal'in team:
+        d.append(yc)
+        d_1=sum (map(float, d))
+    if 'Chelsea'in team:
+        e.append(yc)
+        e_1=sum (map(float, e))
+    if 'Tottenham'in team:
+        g.append(yc)
+        g_1=sum (map(float, g))
+    if 'Swansea'in team:
+        h.append(yc)
+        h_1=sum (map(float, h))
+    
+club=['Manchester United' ,' Manchester City' ,'Liverpool','Arsenal','Chelsea','Tottenham' ,'Swansea']
+avg=[a_1,b_1,c_1,d_1,e_1,g_1,h_1]
+plt.ylim(200,350)
+matplotlib.rcParams.update({'font.size': 5.9})
+
+import matplotlib.pyplot as plt
+import matplotlib
+
+plt.bar(club, avg)
+plt.bar(club, avg)
+plt.title('Yellow Card of Big Clubs')
+plt.xlabel('Team')
+plt.ylabel('yellow card')
+plt.show()
+f.close()
